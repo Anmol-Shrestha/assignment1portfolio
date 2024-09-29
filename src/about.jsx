@@ -1,6 +1,6 @@
 import PrimaryHeading from "../components/PrimaryHeading"
 import Paragraph from "../components/Paragraph";
-import { Link } from "react-router-dom";
+import resume from "./assets/Resume-1.pdf";
 import profilepic from "../src/assets/MyPhoto.jpg";
 export default function About() {
      return (
@@ -22,7 +22,7 @@ export default function About() {
           
      </div>
      </div>
-     <a className="resume" href="./assests/Resume-1.pdf" download target="_blank">Click to download my Resume</a>
+     <a className="resume" href={resume} download target="_blank">Click to download my Resume</a>
 
     
 
