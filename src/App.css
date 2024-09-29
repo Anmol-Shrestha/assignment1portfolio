@@ -1,0 +1,331 @@
+/* 
+Anmo Sagar Shrestha
+301364068
+App.css
+*/
+
+
+/* Default Projects */
+
+body{
+  font-size:62.5%;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #c4c4c4;
+  padding-left: 3rem;
+  padding-right:3rem;
+}
+
+:root{
+  --default_font-size:1.6rem;
+  --color-primary-dark:#303030;
+  --color-primary-light:#fff5f9;
+  --color-primary-light-2:#eaeaea;
+
+}
+
+a{
+  text-decoration: none;
+  font-size: var(--default_font-size);
+}
+
+/* Header/Navigation/Topheader */
+.navigation__checkbox{
+  visibility: hidden;
+}
+.navigation__button{
+  background-color:white;
+  text-align: center;
+  height:4rem;
+  width: 4rem;
+  border-radius: 50%;
+
+  position: fixed;
+  top: 4rem;
+  right: 4rem;
+  z-index:2000;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.6);
+  
+}
+.navigation__background{
+  /* Box Model */
+  height:3rem;
+  width:3rem;
+  border-radius: 50%;
+
+  position:fixed;
+  top: 4.5rem;
+  right: 4.5rem;
+  z-index: 1000;
+
+  background-image: radial-gradient(#000, #eee);
+  box-shadow: 0 1rem 3rem rgba(black);
+  /* transform: scale(50); */
+  transition: all .4s;
+}
+
+.navigation__nav{
+  height:100vh;
+  /* Width should be zero before the button is pressd */
+  
+  opacity: 0;
+
+  position: fixed;
+  top: 0;
+  right:0;
+  z-index: 1500;
+
+  transition: all .8s;
+  
+}
+
+.navigation__list{
+  position: absolute;
+  width:100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  list-style: none;
+  text-align: center;
+  
+}
+
+.navigation__link:link,
+.navigation__link:visited{
+  display: inline-block;
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color:white;
+  padding: 1rem 2rem;
+  background-size:250%;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+  transition: all .4s;
+}
+
+.navigation__link:hover{
+  background-position:100%;
+  color: var(--color-primary-dark);
+}
+/* Functionality */
+.navigation__checkbox:checked ~ .navigation__background{
+  transform: scale(80);
+}
+.navigation__checkbox:checked ~ .navigation__nav{
+  opacity: 1;
+  width: 100%;
+}
+/* ICON */
+.navigation__icon{
+  position: relative;
+  margin-top: 2rem;
+}
+.navigation__icon,.navigation__icon::before, .navigation__icon::after{
+width:2rem;
+height:2px;
+background-color: #000;
+display: inline-block;
+
+
+}
+.navigation__icon::before, .navigation__icon::after{
+  content: "";
+position: absolute;
+left: 0;
+transition: all .4s;
+}
+.navigation__icon::before{
+  top: -.5rem;
+}
+.navigation__icon::after{
+  top: .5rem;
+}
+
+.navigation__button:hover .navigation__icon::before{
+  
+  top: -.3rem;
+}
+.navigation__button:hover .navigation__icon::after{
+  top: .3rem;
+ 
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top:0;
+
+  transform: rotate(45deg);
+  }
+  .navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+   top:0;
+    transform: rotate(-45deg);
+    }
+
+
+/* Heading */
+.primary-heading{
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+/* End Heading */
+
+/* Paragraph */
+.text{
+  font-size: 1.6rem;
+  width: 500px;
+  margin-bottom: .6rem;
+}
+/* End Paragraph */
+
+.container{
+  display: flex;
+  gap: 2rem;
+}
+
+.image-box{
+  width:35rem;
+}
+
+figure{
+  float: left;
+  shape-outside:circle(50% at 50% 50%);
+ clip-path: circle(50% at 50% 50%);
+}
+.image-box img{
+  object-fit: cover;
+  width:100%;
+
+}
+
+.resume{
+  display:inine-block;
+  text-transform: uppercase;
+  transition:all .3s;
+  color: rgb(40, 125, 40);
+}
+
+.resume:hover{
+  border-bottom: 2px solid black;
+}
+
+
+/* Project Card */
+
+.project-card{
+  
+  padding:2rem 2rem;
+  transition:all .9s;
+}
+.project-card:not(:last-child){
+  
+  margin-bottom: 1rem;
+}
+.project-card:hover{
+  background: #eee;
+}
+
+.project-image{
+  width:400px;
+
+}
+.project-image img{
+  width:100%;
+}
+
+.project-description .project-link{
+  font-size: 1rem;
+
+}
+.project-description .project-link a{
+  font-size: 1rem;
+
+}
+.project-description .project-description{
+  font-size: 1.3rem;
+  
+}
+
+/* Services */
+
+.services{
+  font-size: 1.6rem;
+}
+.services li{
+  padding: 1rem 1rem;
+}
+
+
+/* Form Styling */
+
+
+.form__group:not(:last-child) {
+  margin-bottom: 3rem;
+}
+.form__input {
+  padding: 1rem;
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 100%;
+  display: block;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.5s;
+}
+.form__input:focus {
+  outline: none;
+  border-bottom: 3px solid #55c57a;
+}
+.form__input:focus:invalid {
+  border-bottom: 3px solid orangered;
+}
+.form__input::-webkit-input-placeholder {
+  color: red;
+}
+.form__label {
+  padding: 1rem;
+  transition: all 0.5s;
+}
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+.form__radio-group {
+  display: inline;
+  width: 30%;
+}
+.form__radio-label {
+  font-size: 1.5rem;
+  position: relative;
+  padding-left: 4rem;
+}
+.form__radio-button {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid #55c57a;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+}
+.form__radio-button::after {
+  content: "";
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #55c57a;
+  opacity: 0;
+}
+.form__radio-input:checked + .form__radio-label .form__radio-button::after {
+  opacity: 1;
+}
+.form__radio-input {
+  visibility: hidden;
+}
