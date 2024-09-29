@@ -1,6 +1,7 @@
 import PrimaryHeading from "../components/PrimaryHeading"
 import Paragraph from "../components/Paragraph";
 import { Link } from "react-router-dom";
+import profilepic from "../src/assets/MyPhoto.jpg";
 export default function About() {
      return (
      <>
@@ -15,7 +16,7 @@ export default function About() {
 
      <div className="image-box">
           <figure>
-              <img src="src/assets/MyPhoto.jpg" alt="" />
+              <img src={profilepic} alt="" />
                <figcaption></figcaption>
           </figure>
           
